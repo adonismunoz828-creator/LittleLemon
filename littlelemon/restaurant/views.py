@@ -4,6 +4,8 @@ from .models import Menu,Booking
 from .serializers import MenuSerializer,BookingSerializer 
 from rest_framework.permissions import IsAuthenticated
 
+def index(request):
+    return render(request, 'index.html')
 
 # Create your views here.
 class MenuAPIView(generics.ListCreateAPIView):
