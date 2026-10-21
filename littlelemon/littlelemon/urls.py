@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from restaurant.views import BookingViewSet
+from restaurant.views import BookingViewSet, index
 
 router = DefaultRouter()
 router.register(
@@ -30,6 +30,7 @@ router.register(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index, name='index'),
     path('restaurant/', include('restaurant.urls')),
     path('restaurant/', include(router.urls)),
     path('auth/', include('djoser.urls')),
